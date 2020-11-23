@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matchmaker for the Web</title>
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0"> <!--Config for mobile devices-->
+    <link rel="stylesheet" href="matchmaker.css">
+    <!--Center the Webpage--->
+    <style>
+    ::content {
+        max-width: 960px;
+        margin: auto;
+    }
+    </style>
+
+<body style="background-color: darkturquoise;">
+    <h1 style="text-align: center;">Play Cupid's Arrow!</h1><br />
+    <br />
+    <img src="three(3)_hearts.gif" alt="Three Hearts" width="1500" height="600"><br />
+    <p1><b>"*****How to play!<br /> 
+                        1 READ Instructions.<br /> 
+                        2 Answer the questions on a 1-5 scale, with 5 highest(Strongly agree) and 1 lowest(Strongly disagree).<br /> 
+                        3 See how compatable we are!<br /> 
+                        4 You just might win a date with yours truly!<br /> 
+                        5 That last line a joke!! (taken ladies)*****"</b><br />
+    </p1>
+    
+    <h2>First things 1st, Let's check the date and time of our litte game!</h2>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+    <label>Tacos Should Be There Own Food Group!</label><br />
+
+    <select id="Q1" onchange="getSelectedValue();">
+        <option value="0"></option>
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Eh? I dunno know</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <script>
+        function getSelectedValue() {
+
+        var selectedvalue=document.getElementById("Q1").value;
+        console.log(selectedvalue)
+        
+        
+        }
+
+    </script> 
+     
+    <br /><br /><br />
+    <img src="giphy_taco.gif" alt="Dancing Taco">
+    <br /><label>Con Air was the greatest film ever made!</label><br />
+
+    <select id="Q2" onchange="getSelectedValue2();">
+        <option value="0"></option>
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Eh? I dunno know</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <script>
+        function getSelectedValue2() {
+
+        var selectedvalue2=document.getElementById("Q2").value;
+        console.log(selectedvalue2)
+
+        }        
+        
+    </script>   
+    <br /><br /><br />
+    <img src="Con_Air_Bunny.gif" al="Put the Bunny Back in the box!">
+    <br /><label>I love the St. Louis Cardinals!</label><br />
+
+    <select id="Q3" onchange="getSelectedValue3();">
+        <option value="0"></option>
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Eh? I dunno know</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <script>
+        function getSelectedValue3() {
+
+        var selectedvalue3=document.getElementById("Q3").value;
+        console.log(selectedvalue3)
+        }        
+        
+    </script>   
+    
+    <br /><br /><br />
+    <img src="CardsCubs.png" alt="The Rivalry">
+    <br /><label>JELL-O is so OVERRATED, Pudding is UNDERATTED!</label><br />
+
+    <select id="Q4" onchange="getSelectedValue4();">
+        <option value="0"></option>
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Eh? I dunno know</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select> 
+    <script>
+        function getSelectedValue4() {
+
+        var selectedvalue4=document.getElementById("Q4").value;
+        console.log(selectedvalue4)
+       
+        }        
+        
+    </script>   
+    
+    <br /><br /><br />
+    <img src="JelloPudding.jpg" alt="PUDDING">
+    <br /><label>Working out and staying motivated is important?</label><br />
+
+    <select id="Q5" onchange="getSelectedValue5();">
+        <option value="0"></option>
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Eh? I dunno know</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+    <script>
+        function getSelectedValue5() {
+
+        var selectedvalue5=document.getElementById("Q5").value;
+        console.log(selectedvalue5)
+
+        }        
+        
+    </script>   
+        
+     
+    
+    <br /><br /><br />
+    <img src="Anchorman_Weights.gif" alt="That Escalted Quickly!">
+    <br /><button onclick="CalculateCompatibility()">Calculate Compatibility </button>
+    <p id="Compatibility"></p>
+
+
+
+<!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7687015&style=0025&nbdigits=6&type=page&initCount=0" title="Total Website Hits" Alt="Web Hits"   border="0" /></a>
+    
+    
+    <script>
+        console.log("Running the T-2000....");
+        
+        function CalculateCompatibility() {
+            console.log("CalculateCompatibility()");
+        
+            const DESIRED_RESPONSE = [
+        3,
+        5, 
+        2,
+        1,
+        4,
+    ]
+
+    const MAX_Score = 25
+    // Get the current values of the dropdown controls;
+    let question1Response = document.getElementById("Q1").selectedOptions[0].value;
+    let question2Response = document.getElementById("Q2").selectedOptions[0].value;
+    let question3Response = document.getElementById("Q3").selectedOptions[0].value;
+    let question4Response = document.getElementById("Q4").selectedOptions[0].value; 
+    let question5Response = document.getElementById("Q5").selectedOptions[0].value;   
+
+    console.log("Question 1 Answers:")
+    console.log(document.getElementById("Q1").selectedOptions[0].text)
+    console.log(document.getElementById("Q1").selectedOptions[0].value)
+    console.log(question1Response)
+
+    console.log("Question 2 Answers:")
+    console.log(document.getElementById("Q2").selectedOptions[0].text)
+    console.log(document.getElementById("Q2").selectedOptions[0].value)
+    console.log(question2Response)
+
+    console.log("Question 3 Answers:")
+    console.log(document.getElementById("Q3").selectedOptions[0].text)
+    console.log(document.getElementById("Q3").selectedOptions[0].value)
+    console.log(question3Response)
+
+    console.log("Question 4 Answers:")
+    console.log(document.getElementById("Q4").selectedOptions[0].text)
+    console.log(document.getElementById("Q4").selectedOptions[0].value)
+    console.log(question4Response)
+
+    console.log("Question 5 Answers:")
+    console.log(document.getElementById("Q5").selectedOptions[0].text)
+    console.log(document.getElementById("Q5").selectedOptions[0].value)
+    console.log(question5Response)
+        
+       // To do: Calculate Compatibility Scores.
+    let question1Compatibility=5-Math.abs(question1Response-DESIRED_RESPONSE[0])
+    let question2Compatibility=5-Math.abs(question2Response-DESIRED_RESPONSE[0])
+    let question3Compatibility=5-Math.abs(question3Response-DESIRED_RESPONSE[0])
+    let question4Compatibility=5-Math.abs(question4Response-DESIRED_RESPONSE[0])
+    let question5Compatibility=5-Math.abs(question5Response-DESIRED_RESPONSE[0])
+
+    console.log("c1="+question1Compatibility);
+    console.log("c2="+question2Compatibility);
+    console.log("c3="+question3Compatibility);
+    console.log("c4="+question4Compatibility);
+    console.log("c5="+question5Compatibility);
+    
+    //Total Compatibility
+    let totalcompatibility = (question1Compatibility+question2Compatibility+question3Compatibility+question4Compatibility+question5Compatibility)*100/ MAX_Score;
+    totalcompatibility=Math.round(totalcompatibility)
+    console.log("Our Totalcompatibility="+totalcompatibility)
+    //Conver Total Compatibility to a Percentage
+    //totalcompatibility=100 / MAX_Score;
+    //totalcompatibility=Math.round(totalcompatibility);
+    //console.log("TotalCompatibility="+totalcompatibility);
+   
+    let userresponse1=("MMMMM....Tacos!" +question1Response)
+    let userresponse2=("We already know Nicolas Cage with a mullet is the greatest thing ever, right?:"+question2Response)
+    let userresponse3=("How dare you speak such blasphemy to a Cubs Fan!:"+question3Response)
+    let userresponse4=("Cept for Blue Rasperberry Jell-O that stuff is awesome!:"+question4Response)
+    let userresponse5=("Sweet wanna go for a run?:"+ question5Response)
+    
+    document.getElementById("Compatibility").innerHTML="So are you the one with the glass slipper?: "+totalcompatibility+"%";
+    let myresponse=("Are you the one with the glass slipper?..."+totalcompatibility+"%");
+    if (totalcompatibility>=80) {
+       myresponse="So are you the one with the glass slipper?...Hey You! Get Into My Car!"+totalcompatibility+"%"
+    }
+    else if (totalcompatibility>=60) {
+        myresponse="Hey maybe, We should get to know each other first!"+totalcompatibility+"%"
+    }
+    else {
+        myresponse="On second thought, I just remembered I am moving to Texas next week so...."+totalcompatibility+"%"
+    }
+    document.getElementById("Compatibility").innerHTML=myresponse
+    }
+
+    </script>
+<!--
+    Authored by Chris Sprys
+    Project: Matchmaker Web Application
+    Course: Intro to Computer Science
+
+    All Rights Reserved
+-->
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
